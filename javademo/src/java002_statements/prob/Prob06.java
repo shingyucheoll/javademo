@@ -45,7 +45,8 @@ public class Prob06 {
 			money += 20;
 		}else if ( overtime >= 10 && overtime < 20) {
 			money += 10;
-		}else {			
+		}else {
+			money += 0;
 		}
 
 		//////////////////////////////////////
