@@ -41,6 +41,7 @@ public class Java128_RegEx {
 		System.out.println(sn.matches(".{1,3}[ar]"));	//true
 		
 		
+		System.out.println("=====sn = \"java korea\";=====");
 		sn = "java korea";
 		//sn변수에 저장된 문자열이 a 또는 r로 끝나면 true을 리턴하고 아니면 false을 리턴한다.
 		System.out.println(sn.matches(".*[ar]"));

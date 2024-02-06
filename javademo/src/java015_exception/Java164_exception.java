@@ -19,7 +19,7 @@ public class Java164_exception {
 
 		try {
 			fr = new FileReader(file);
-			System.out.println(fr.read());
+			System.out.println((char)fr.read()); //  FileReader에서 read는 문자 하나만 아스키코드로 읽어온다. 
 		} catch (FileNotFoundException ex) {
 			System.out.println(ex.toString());
 		} catch (IOException e) {
