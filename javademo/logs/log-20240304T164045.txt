@@ -1,0 +1,3 @@
+2024-03-04 16:40:45,803 - java023_logging.part02.Test -info message
+2024-03-04 16:40:45,805 - java023_logging.part02.Test -warn message
+2024-03-04 16:40:45,805 - java023_logging.part02.Test -error message

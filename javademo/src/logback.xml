@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+	<timestamp key="bySecond" datePattern="yyyMMdd'T'HHmmss" />
+	<!-- appender -->
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<!-- 로그 메시지 형식 -->
+			<pattern>%d{HH:mm:SS.SSS} [%thread] %-5level - %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>logs/log-${bySecond}.txt</file>
+		<append>true</append>
+		<encoder>
+			<!-- 로그 메시지 형식 -->
+			<pattern>%d - %logger{35} -%msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- logger -->
+	<!-- TRACE - DEBUG - INFO - WARN - ERROR -->
+	<!-- additivity는 생략하면 TRUE가 디폴트 -->
+	<logger name="java023_logging.part01" level="TRACE"
+		additivity="true" />
+	<!-- java023_logging.part02로 logger를 설정하지 않으면 root의 영향을 받아서 처리한다. -->
+
+	<!--root에 설정된 appender을 적용하지 않고 다른 appender을 적용해야 할때는 additivity="false"하고 
+		아래에 <appender-ref ref="STDOUT" />을 설정한다. -->
+		
+		<!-- additivity="true" 기본값 true // 콘솔 띄우기 --> 
+
+	<logger name="java023_logging.part02" level="INFO" > 
+		<appender-ref ref="FILE" />
+	</logger>
+	
+	<!-- <logger name="java24_lombok." -->
+
+	<!-- TRACE < DEBUG < INFO < WARN < ERROR -->
+	<!-- root -->
+	<root level="debug">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
